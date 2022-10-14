@@ -12,6 +12,8 @@ __It works with any crop, nether wart and cocoa beans!__
 
 _With this mod you can spam bone meal forever!_
 
+![farming](https://user-images.githubusercontent.com/19254233/195892750-bf0c36a8-7e55-4177-a80f-c2fd46cfad14.gif)
+
 ## Some Questions
 
 > *Can I use bone meal in Nether warts?*
@@ -29,3 +31,5 @@ Yes, don't get your hand dirty!
 > *Can I use this in servers?*
 
 Yes! This works normally in servers too!
+
+![bonemeal](https://user-images.githubusercontent.com/19254233/195892784-335912fe-3e43-46ed-8f03-d5db19042eeb.gif)
