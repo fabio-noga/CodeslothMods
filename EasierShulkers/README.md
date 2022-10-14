@@ -10,6 +10,8 @@ CurseForge Page: https://www.curseforge.com/minecraft/mc-mods/easier-shulkers
 
 `Shift` + `Right Click` to place it on a block
 
+![ezgif-4-1a8b8aa6de](https://user-images.githubusercontent.com/19254233/195892603-81128107-e1cb-4773-b862-5d64731ecfc6.gif)
+
 ## Some Questions
 
 > *What happens if I right click a placed shulker with a shulker in hand?*
