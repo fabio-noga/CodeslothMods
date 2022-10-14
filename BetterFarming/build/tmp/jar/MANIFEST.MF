@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Specification-Title: betterfarming
+Specification-Vendor: betterfarmingsareus
+Specification-Version: 1
+Implementation-Title: BetterFarming
+Implementation-Version: 1.19.2-1.0.0
+Implementation-Vendor: betterfarmingsareus
+Implementation-Timestamp: 2022-10-07T23:32:04+0100
+
