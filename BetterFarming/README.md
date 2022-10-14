@@ -12,7 +12,7 @@ __It works with any crop, nether wart and cocoa beans!__
 
 _With this mod you can spam bone meal forever!_
 
-![farming](https://user-images.githubusercontent.com/19254233/195892750-bf0c36a8-7e55-4177-a80f-c2fd46cfad14.gif)
+![farming](https://user-images.githubusercontent.com/19254233/195893027-6757b4d0-5e2b-46d5-b5fb-3b7196dfb6c4.gif)
 
 ## Some Questions
 
