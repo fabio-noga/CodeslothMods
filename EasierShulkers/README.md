@@ -1,4 +1,6 @@
-# EasierShulkers
+# EasierShulkers ![](http://cf.way2muchnoise.eu/full_easier-shulkers_downloads.svg) 
+![](http://cf.way2muchnoise.eu/versions/easier-shulkers.svg)
+
 Easier way to access shulkers
 
 CurseForge Page: https://www.curseforge.com/minecraft/mc-mods/easier-shulkers
