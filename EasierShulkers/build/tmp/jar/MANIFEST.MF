@@ -1,9 +1,0 @@
-Manifest-Version: 1.0
-Specification-Title: easiershulkers
-Specification-Vendor: easiershulkerssareus
-Specification-Version: 1
-Implementation-Title: EasierShulkers
-Implementation-Version: 1.19.2-1.1.0
-Implementation-Vendor: easiershulkerssareus
-Implementation-Timestamp: 2022-10-07T23:34:19+0100
-
