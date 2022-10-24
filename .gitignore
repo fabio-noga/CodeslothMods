@@ -1,3 +1,4 @@
+/.idea/
 /BetterFarming/.gradle/
 /BetterFarming/build/
 /BetterFarming/gradle/
@@ -6,4 +7,6 @@
 /EasierShulkers/gradle/
 /EasierShulkers/build/
 /EasierShulkers/run/
-/.idea/
+/MagicMirror/.gradle/
+/MagicMirror/build/
+/MagicMirror/gradle/
