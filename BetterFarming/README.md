@@ -1,5 +1,5 @@
-# Improved Farming! ![](http://cf.way2muchnoise.eu/full_improved-farming_downloads.svg) 
-![](http://cf.way2muchnoise.eu/versions/improved-farming.svg)
+# Improved Farming! ![](https://cf.way2muchnoise.eu/full_686785_downloads.svg) 
+![](http://cf.way2muchnoise.eu/versions/686785.svg)
 
 Gather crops with themselves or with a hoe, without needing to replant each seed!
 
