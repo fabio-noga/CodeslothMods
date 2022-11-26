@@ -6,3 +6,4 @@ CurseForge Page: https://www.curseforge.com/members/fianoo/projects
 
 - [Easier Shulkers](https://www.curseforge.com/minecraft/mc-mods/easier-shulkers) - Open shulker boxes without the need of placing them!
 - [Improved Farming](https://www.curseforge.com/minecraft/mc-mods/improved-farming) - Auto replant every crop using a hoe, bone meal or themselves!
+- [Magic Mirror](https://www.curseforge.com/minecraft/mc-mods/magic-mirror-codesloth) - Teleport to your respawn point in a easier way!
