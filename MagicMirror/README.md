@@ -8,6 +8,7 @@ When the magic mirror is on the hand of the player, right click it to teleport t
 
 ## How to get the magic mirror:
 You can get the magic mirror from a level 5 Cleric Villager (The one with the brewing stand)
+![Screenshot_1](https://user-images.githubusercontent.com/19254233/204107821-da82cdaf-3097-46f0-99db-5175a9da9991.png)
 
 
 ## Some Questions
