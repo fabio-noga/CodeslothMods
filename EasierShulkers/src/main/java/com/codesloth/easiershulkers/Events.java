@@ -1,18 +1,11 @@
 package com.codesloth.easiershulkers;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.core.BlockPos;
-import net.minecraft.server.WorldLoader;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.ShulkerBoxMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-//import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -35,11 +28,11 @@ public class Events {
         } catch (Exception ignore){}
 
         Player player = event.getEntity();
-        if(IS_SERVER || player == null || player instanceof FakePlayer || player.containerMenu instanceof ShulkerBoxMenu)
+        if(IS_SERVER || player == null || player.containerMenu instanceof ShulkerBoxMenu)
             return;
 
         ItemStack mainHandItem = player.getMainHandItem();
-        if(!isShulkerBox(mainHandItem))
+        if(!Utils.isShulkerBox(mainHandItem))
             return;
 
         InteractionHand hand = player.getUsedItemHand();
@@ -65,7 +58,7 @@ public class Events {
         } catch (Exception ignore){}
 
         Player player = event.getEntity();
-        if (IS_SERVER || player instanceof FakePlayer || player.containerMenu instanceof ShulkerBoxMenu)
+        if (IS_SERVER || player.containerMenu instanceof ShulkerBoxMenu)
             return;
 
         InteractionHand hand = event.getHand();

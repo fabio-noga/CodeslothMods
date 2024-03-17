@@ -17,7 +17,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ShulkerBoxMenu;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
@@ -61,18 +61,14 @@ public class ShulkerBoxInventory implements Container, MenuProvider {
 
     public void fillWithLoot(@Nullable Player player) {
         if (lootTable != null && player != null) {
-            LootTable loottable = Objects.requireNonNull(player.level.getServer()).getLootTables().get(lootTable);
-            lootTable = null;
+            LootTable lootTable = Objects.requireNonNull(player.level().getServer()).getLootData().getLootTable(this.lootTable);
+            this.lootTable = null;
 
-            LootContext.Builder builder = new LootContext.Builder((ServerLevel) player.level);
-
-            if (lootTableSeed != 0L) {
-                builder.withOptionalRandomSeed(lootTableSeed);
-            }
+            LootParams.Builder builder = new LootParams.Builder((ServerLevel) player.level());
 
             builder.withLuck(player.getLuck()).withParameter(LootContextParams.THIS_ENTITY, player);
 
-            loottable.fill(this, builder.create(LootContextParamSets.CHEST));
+            lootTable.fill(this, builder.create(LootContextParamSets.CHEST), lootTableSeed);
             setChanged();
         }
     }
@@ -118,13 +114,13 @@ public class ShulkerBoxInventory implements Container, MenuProvider {
 
     @Override
     public void startOpen(Player player) {
-        player.level.playSound(null, player.getX(), player.getY(), player.getZ(), getOpenSound(), SoundSource.BLOCKS, 0.5F, 1.0f);
+        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), getOpenSound(), SoundSource.BLOCKS, 0.5F, 1.0f);
     }
 
     @Override
     public void stopOpen(Player player) {
         setChanged();
-        player.level.playSound(null, player.getX(), player.getY(), player.getZ(), getCloseSound(), SoundSource.BLOCKS, 0.5F, player.level.random.nextFloat() * 0.1F + 0.9F);
+        player.level().playSound(null, player.getX(), player.getY(), player.getZ(), getCloseSound(), SoundSource.BLOCKS, 0.5F, player.level().random.nextFloat() * 0.1F + 0.9F);
     }
 
     protected SoundEvent getOpenSound() {
