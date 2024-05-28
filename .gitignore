@@ -10,3 +10,5 @@
 /MagicMirror/.gradle/
 /MagicMirror/build/
 /MagicMirror/gradle/
+MagicMirror/.idea
+MagicMirror/run

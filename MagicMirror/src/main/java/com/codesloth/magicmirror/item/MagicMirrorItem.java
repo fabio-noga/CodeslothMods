@@ -10,16 +10,17 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
+import org.jetbrains.annotations.NotNull;
 
 public class MagicMirrorItem extends Item {
-    public MagicMirrorItem(Properties settings) {
+    public MagicMirrorItem(Item.Properties settings) {
         super(settings);
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+    public InteractionResultHolder<ItemStack> use(@NotNull Level level, Player player, @NotNull InteractionHand hand) {
         ItemStack mainHandItem = player.getMainHandItem();
-        if (mainHandItem.getItem().equals(ModItem.MAGIC_MIRROR_ITEM.get())) {
+        if (mainHandItem.getItem().equals(ModCreativeModeTab.MAGIC_MIRROR_ITEM.get())) {
             if (level.dimension().location().toString().equals("minecraft:overworld")) {
                 if(!level.isClientSide && hand.equals(InteractionHand.MAIN_HAND)) {
                     MinecraftServer server = level.getServer();

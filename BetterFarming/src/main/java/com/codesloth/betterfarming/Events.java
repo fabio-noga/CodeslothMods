@@ -12,10 +12,12 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.loot.LootContext;
+import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -34,15 +36,13 @@ public class Events {
     }
 
     private boolean harvest(BlockPos pos, Player player) {
-        Level world = player.level;
+        Level world = player.level();
         BlockState state = world.getBlockState(pos);
         Block blockClicked = state.getBlock();
 
         BonemealableBlock growable = getGrowable(blockClicked);
 
-        if (growable == null ||
-            growable.isValidBonemealTarget(world, pos, state, world.isClientSide))
-        {
+        if (growable == null || growable.isValidBonemealTarget(world, pos, state)) {
             return false;
         }
 
@@ -52,7 +52,7 @@ public class Events {
 
         ItemStack mainHandItem = player.getMainHandItem();
 
-        LootContext.Builder context = new LootContext.Builder((ServerLevel) world)
+        LootParams.Builder context = new LootParams.Builder((ServerLevel) world)
                 .withParameter(LootContextParams.ORIGIN, new Vec3(pos.getX(), pos.getY(), pos.getZ()))
                 .withParameter(LootContextParams.BLOCK_STATE, state)
                 .withParameter(LootContextParams.THIS_ENTITY, player)
@@ -104,7 +104,7 @@ public class Events {
         if (blockClicked instanceof NetherWartBlock) {
             return new BonemealableBlock() {
                 @Override
-                public boolean isValidBonemealTarget(BlockGetter worldIn, BlockPos pos, BlockState state, boolean isClient) {
+                public boolean isValidBonemealTarget(LevelReader worldIn, BlockPos pos, BlockState state) {
                     return state.getValue(NetherWartBlock.AGE) < NetherWartBlock.MAX_AGE;
                 }
 

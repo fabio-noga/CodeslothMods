@@ -1,7 +1,7 @@
 package com.codesloth.magicmirror;
 
 import com.codesloth.magicmirror.event.SoundEvents;
-import com.codesloth.magicmirror.item.ModItem;
+import com.codesloth.magicmirror.item.ModCreativeModeTab;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,8 +17,9 @@ public class MagicMirror
     public MagicMirror()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ModItem.register(modEventBus);
+        ModCreativeModeTab.register(modEventBus);
         SoundEvents.register(modEventBus);
         MinecraftForge.EVENT_BUS.register(this);
+        modEventBus.addListener(ModCreativeModeTab::addCreative);
     }
 }
