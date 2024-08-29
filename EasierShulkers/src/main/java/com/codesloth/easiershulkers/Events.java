@@ -11,8 +11,6 @@ import net.minecraftforge.fml.common.Mod;
 
 import java.util.Objects;
 
-import static com.codesloth.easiershulkers.Utils.isShulkerBox;
-
 @Mod.EventBusSubscriber(modid = EasierShulkers.MOD_ID)
 public class Events {
 
@@ -62,8 +60,6 @@ public class Events {
             return;
 
         InteractionHand hand = event.getHand();
-
-        ItemStack mainHandItem = player.getMainHandItem();
 
         if (hand.equals(InteractionHand.OFF_HAND) && Utils.getShulkerBox(player, InteractionHand.MAIN_HAND) != null) {
             event.setCanceled(true);

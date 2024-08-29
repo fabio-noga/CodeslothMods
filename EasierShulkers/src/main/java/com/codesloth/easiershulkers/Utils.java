@@ -1,17 +1,15 @@
 package com.codesloth.easiershulkers;
 
-import com.codesloth.easiershulkers.gui.ShulkerBoxInventory;
-import net.minecraft.network.chat.Component;
+import com.codesloth.easiershulkers.ShulkerBoxHand.ShulkerBoxHand;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.MenuProvider;
-import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.inventory.AbstractContainerMenu;
-import net.minecraft.world.inventory.ShulkerBoxMenu;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.ShulkerBoxBlock;
+import net.minecraft.world.level.block.state.BlockState;
 
 public class Utils {
 
@@ -29,18 +27,16 @@ public class Utils {
 
     public static void openShulkerBox(Player player, ItemStack stack) {
         if (!player.level().isClientSide && player instanceof ServerPlayer) {
-            player.openMenu(new MenuProvider() {
-                @Override
-                public AbstractContainerMenu createMenu(int id, Inventory playerInventory, Player playerEntity) {
-                    return new ShulkerBoxMenu(id, playerInventory, new ShulkerBoxInventory(player, stack));
-                }
-
-                @Override
-                public Component getDisplayName() {
-                    return stack.getHoverName();
-                }
-            });
+            ShulkerBoxHand shulkerBox = createShulkerBox(player, stack);
+            shulkerBox.applyComponentsFromItemStack(stack);
+            shulkerBox.openShulker(player);
         }
+    }
+
+    private static ShulkerBoxHand createShulkerBox(Player player, ItemStack stack) {
+        BlockPos pPos = player.getOnPos();
+        BlockState pBlockState = ((BlockItem) stack.getItem()).getBlock().defaultBlockState();
+        return new ShulkerBoxHand(pPos, pBlockState, player, stack);
     }
 
 }

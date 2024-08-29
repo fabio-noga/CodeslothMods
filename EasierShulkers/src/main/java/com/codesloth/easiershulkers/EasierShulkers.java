@@ -19,7 +19,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import org.slf4j.Logger;
 
 @Mod(EasierShulkers.MOD_ID)
-@Mod.EventBusSubscriber(modid = EasierShulkers.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class EasierShulkers {
 
     public static final String MOD_ID = "easiershulkers";
