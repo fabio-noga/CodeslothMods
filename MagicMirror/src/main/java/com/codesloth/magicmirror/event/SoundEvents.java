@@ -18,7 +18,7 @@ public class SoundEvents {
 
     public static RegistryObject<SoundEvent> registerSoundEvent(String name) {
         return SOUND_EVENTS.register(name,
-                () -> SoundEvent.createVariableRangeEvent((new ResourceLocation(MagicMirror.MOD_ID, name))));
+                () -> SoundEvent.createVariableRangeEvent((ResourceLocation.fromNamespaceAndPath(MagicMirror.MOD_ID, name))));
     }
 
     public static void register (IEventBus eventBus){
