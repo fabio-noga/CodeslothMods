@@ -1,0 +1,8 @@
+{
+  "teleport": {
+    "subtitle":"Magic Mirror's Teleport",
+    "sounds": [
+      "magicmirror:teleport"
+    ]
+  }
+}
